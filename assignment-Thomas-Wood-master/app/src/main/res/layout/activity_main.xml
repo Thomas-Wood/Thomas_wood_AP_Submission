@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C6C6C6"
+        tools:context=".MainActivity">
+
+    <TextView
+            android:id="@+id/title"
+            android:layout_width="329dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/new_game_title"
+            android:textColor="#000000"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+            android:id="@+id/width"
+            android:layout_width="158dp"
+            android:layout_height="43dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/game_size_hint"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:text="5"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/widthTitle" />
+
+    <EditText
+            android:id="@+id/human_player_total"
+            android:layout_width="158dp"
+            android:layout_height="43dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/game_player_hint"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:text="1"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/human_player" />
+
+    <EditText
+            android:id="@+id/computer_player_total"
+            android:layout_width="158dp"
+            android:layout_height="43dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/game_player_hint"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:text="1"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/computer_player" />
+
+    <TextView
+            android:id="@+id/widthTitle"
+            android:layout_width="175dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/game_width"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+            android:id="@+id/human_player"
+            android:layout_width="175dp"
+            android:layout_height="33dp"
+            android:gravity="center"
+            android:text="@string/add_human_player"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_players" />
+
+    <TextView
+            android:id="@+id/computer_player"
+            android:layout_width="175dp"
+            android:layout_height="33dp"
+            android:gravity="center"
+            android:text="@string/add_computer_player"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_players" />
+
+    <TextView
+            android:id="@+id/add_players"
+            android:layout_width="175dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/add_players"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/width" />
+
+    <EditText
+            android:id="@+id/height"
+            android:layout_width="158dp"
+            android:layout_height="43dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/game_size_hint"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:text="8"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/heightTitle" />
+
+    <TextView
+            android:id="@+id/heightTitle"
+            android:layout_width="175dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/game_height"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <RadioGroup
+            android:id="@+id/difficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/human_player_total"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+        <RadioButton
+                android:id="@+id/easy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Easy"/>
+
+        <RadioButton
+                android:id="@+id/medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Medium" />
+        <RadioButton
+                android:id="@+id/hard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hard"/>
+    </RadioGroup>
+
+    <Button
+            android:id="@+id/start_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="startGame"
+            android:text="@string/start_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/difficulty" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
